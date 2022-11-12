@@ -10,13 +10,10 @@ const App = {
     async start() {
         try{
             await Notifyer.init()
-            Emitter.on('countdown-start', () => {
-                notify()
-            })
-            Emitter.on('countdown-end', () => {
-                Timer.init()
-            })
-            Timer.init()
+            Emitter.on('countdown-start', notify)
+            Emitter.on('countdown-end',Timer.init)
+
+            Timer.init(3)
         }
         catch(err){
             console.log(err.message)
