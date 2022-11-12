@@ -2,7 +2,7 @@ import { View } from './View.js'
 import {Emitter} from './Emitter.js'
 
 const Timer = {
-time: 60*60,
+time: 6,
 currentTime: 0,
 interval: null,
 
@@ -27,6 +27,7 @@ countdown(){
     )
     if(Timer.currentTime === 0){
         clearInterval(Timer.interval)
+        Emitter.emit('countdown-end')
     }
 
 }

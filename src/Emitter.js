@@ -19,8 +19,4 @@ const Emitter = {
         });
     }
 }
-
-Emitter.on('click', (a,b,c,d,e) => console.log(a,b))
-Emitter.on('click', (a,b) => console.log(a,b))
-Emitter.emit('click', 1, 2, 3, 4)
 export {Emitter}
